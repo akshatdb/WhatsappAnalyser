@@ -30,12 +30,22 @@ nav .brand-logo{
 .nav-wrapper{
     background-color:#4ed76b;
 }
-.file-div{
-    position:absolute;
-    top:0px;
-    text-align: center;
-    margin: 25% 25%;   
+@media only screen and (min-width: 1024px){
+    .file-div{
+        position:absolute;
+        top:0px;
+        text-align: center;
+        margin: 25% 25%;   
+    }
 }
+@media only screen and (max-width: 1024px)
+{
+    .file-div{
+        position:absolute;
+        top: 50%;
+    }
+}
+
 #upload-btn{
     display:none;
 }

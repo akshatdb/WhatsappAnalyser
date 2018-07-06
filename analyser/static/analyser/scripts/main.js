@@ -34,6 +34,7 @@ function processData(data)
     DayWise = data['response']['UsagePatternDaywise'];
     MonthWise = data['response']['UsagePatternMonthwise'];
     Overall = data['response']['UsagePatternOverall'];
+    $('.result-div').fadeIn();
     plotBar(SenderCountPlot[0],SenderCountPlot[1], 'sendercount'), 250;
     plotChart(DateWise[0], DateWise[1], 'datewise');
     plotChart(MonthWise[0], MonthWise[1], 'monthwise');

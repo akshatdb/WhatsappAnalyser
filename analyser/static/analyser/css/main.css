@@ -55,7 +55,6 @@ nav .brand-logo{
 #file-upload-label, #upload-btn{
     padding: 10px 80px;
     height:55px;
-    background: #4ed76b;
     color: white;
     font-size: 20px;
     font-weight: bold;
@@ -65,4 +64,7 @@ nav .brand-logo{
 }
 h4{
     text-align:center;
+}
+.result-div{
+    display:none;
 }

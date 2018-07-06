@@ -1,0 +1,58 @@
+nav .brand-logo{
+    padding: 0px 40px;
+}
+#progress-wrp {
+    height: 3px;
+    width:100vh;
+    border-radius: 0;
+    margin: auto;
+    color:white;
+    letter-spacing: 3px;
+    font-size:20px;
+    text-align: center;
+    background: #fff;
+    box-shadow: inset 1px 3px 6px rgba(0, 0, 0, 0.12);
+}
+#progress-wrp .progress-bar{
+    height: 100%;
+    border-radius: 0;
+    background-color: var(--color-c);
+    width: 0;
+    box-shadow: inset 1px 1px 10px rgba(0, 0, 0, 0.11);
+}
+.parallax-container{
+    height:540px;
+    width:100%;
+}
+#progress-wrp{
+    display:none;
+}
+.nav-wrapper{
+    background-color:#4ed76b;
+}
+.file-div{
+    position:absolute;
+    top:0px;
+    text-align: center;
+    margin: 25% 25%;   
+}
+#upload-btn{
+    display:none;
+}
+#upload-btn{
+    border:none;
+}
+#file-upload-label, #upload-btn{
+    padding: 10px 80px;
+    height:55px;
+    background: #4ed76b;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+#file-upload-label:hover, #upload-btn:hover{
+    cursor: pointer;
+}
+h4{
+    text-align:center;
+}

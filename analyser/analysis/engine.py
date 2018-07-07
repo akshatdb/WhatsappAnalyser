@@ -1,13 +1,7 @@
 import sys
 import re
 import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.pylab as pll
-from matplotlib import rcParams
-rcParams.update({'figure.autolayout': True})
-import pandas as pd
 import datetime
-from PIL import Image
 fillers = [' ki ',' ka ',' ke ',' nhi ',' nahi ',' ye ',' hai ',' mein ',' se ',' hi ',' ha ',' ho ',' bhi ',' vo ',' aur ',' Ye ',' kya ',' ab ',' ra ', ' jo ', ' ko ', ' pe ', ' ne ', ' le ', ' lo ', ' wo ', ' hmm ', ' hum ', ' abhi ' , ' ek ', ' na ', ' ni ', ' mai ', ' abe ', ' mai ', ' tm ' , ' ab ', ' hua ', ' tum ', ' tha ']
 fillers = fillers + [" " + i[1:].capitalize() for i in fillers]
 def findAlias(name):
@@ -370,4 +364,5 @@ def create(text):
 	responseDict['UsagePatternDatewise'] = UsagePatternDatewise(datecount)
 	responseDict['UsagePatternMonthwise'] = UsagePatternMonthWise(monthcount)
 	responseDict['NameMessages'] = AllMessageFromAll(senderdict, senderlist)
+	responseDict['senderlist'] = senderlist
 	return responseDict

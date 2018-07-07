@@ -10,6 +10,7 @@ function plotBar(x, y, divid, bMargin)
         b: bMargin
     },
     height: 700},
+    {scrollZoom: true},
     {displayModeBar: false},
     {displaylogo: false},
     {modeBarButtonsToRemove: 'all'},
@@ -23,23 +24,29 @@ function plotChart(x, y, divid)
         y: y,
     }],
     {displayModeBar: false},
+    {scrollZoom: true},
     {displaylogo: false},
     {modeBarButtonsToRemove: 'all'},
     );
 }
 function processData(data)
 {
+    $("#progress-wrp").fadeOut();
     SenderCountPlot = data['response']['SenderMessageCountPlot'];
     DateWise = data['response']['UsagePatternDatewise'];
     DayWise = data['response']['UsagePatternDaywise'];
     MonthWise = data['response']['UsagePatternMonthwise'];
     Overall = data['response']['UsagePatternOverall'];
     $('.result-div').fadeIn();
-    plotBar(SenderCountPlot[0],SenderCountPlot[1], 'sendercount'), 250;
+    plotBar(SenderCountPlot[0],SenderCountPlot[1], 'sendercount', 250);
     plotChart(DateWise[0], DateWise[1], 'datewise');
     plotChart(MonthWise[0], MonthWise[1], 'monthwise');
     plotChart(DayWise[0], DayWise[1], 'daywise');
     plotBar(Overall[0], Overall[1], 'overall', 100);
+    $('.preloader-div').fadeOut();
+    $('html, body').animate({
+        scrollTop: $('#result-start').offset().top
+    }, 800);
 }    
     
     
@@ -95,6 +102,6 @@ Upload.prototype.progressHandling = function (event) {
     $(progress_bar_id + " .status").text(percent + "%");
     if (percent == 100) {
         $(progress_bar_id).fadeOut('fast');
-        $('#process-wrp').fadeIn('fast');
+        $('.preloader-div').fadeIn();
     }
 };
